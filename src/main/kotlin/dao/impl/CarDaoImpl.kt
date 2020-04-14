@@ -40,16 +40,15 @@ class CarDaoImpl : CarDao {
         val stmt = connection.prepareStatement(SELECT_BY_ID)
         stmt.setLong(1, id)
         val resultSet: ResultSet = stmt.executeQuery()
-        if (resultSet.next()) {
-            return Cars(
-               resultSet.getLong("id"),
-               resultSet.getString("mark"),
-               resultSet.getString("model"),
-               resultSet.getLong("user_id"),
-               resultSet.getDouble("price")
-           )
-        }
-        return null
+        return if (resultSet.next()) {
+            Cars(
+                resultSet.getLong("id"),
+                resultSet.getString("mark"),
+                resultSet.getString("model"),
+                resultSet.getLong("user_id"),
+                resultSet.getDouble("price")
+            )
+        } else null
     }
 
     override fun save(obj: Cars): Cars {
