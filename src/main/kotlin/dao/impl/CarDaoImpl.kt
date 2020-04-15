@@ -1,11 +1,18 @@
 package dao.impl
 
 import dao.CarDao
+import dao.Dao
 import manager.ConnectionManager.Companion.getConnection
 import model.Cars
 import java.sql.ResultSet
 import java.sql.Statement
 
+/**
+ * @author trugaaa ( Andrey Kolesnyk )
+ *
+ * Class tha implements behavior described Dao interface for "cars" table and Cars dataclass
+ * @see Dao<T> to check basic behaviour documentation
+ * */
 class CarDaoImpl : CarDao {
 
     companion object {

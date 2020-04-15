@@ -1,11 +1,18 @@
 package dao.impl
 
+import dao.Dao
 import dao.UserDao
 import manager.ConnectionManager
 import model.Users
 import java.sql.ResultSet
 import java.sql.Statement
 
+/**
+ * @author trugaaa ( Andrey Kolesnyk )
+ *
+ * Class tha implements behavior described Dao interface for "users" table and Users dataclass
+ * @see Dao<T> to check basic behaviour documentation
+ * */
 class UserDaoImpl : UserDao {
     companion object {
         const val SAVE: String =

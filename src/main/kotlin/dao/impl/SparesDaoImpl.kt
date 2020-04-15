@@ -1,11 +1,18 @@
 package dao.impl
 
+import dao.Dao
 import dao.SparesDao
 import manager.ConnectionManager
 import model.Spares
 import java.sql.ResultSet
 import java.sql.Statement
 
+/**
+ * @author trugaaa ( Andrey Kolesnyk )
+ *
+ * Class tha implements behavior described Dao interface for "spares" table and Spares dataclass
+ * @see Dao<T> to check basic behaviour documentation
+ * */
 class SparesDaoImpl : SparesDao {
     companion object {
         const val SAVE: String = "INSERT INTO spares (car_id,name,price,amount) VALUES(?,?,?,?)"
