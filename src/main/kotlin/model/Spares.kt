@@ -10,4 +10,4 @@ package model
  * @param price - column "price" in DB table
  * @param amount - column "amount" in DB table
  * */
-data class Spares (var id:Long, var idCars:Long,val name:String, val price:Double, var amount: Int)
+data class Spares (var id:Long?, var idCars:Long,val name:String, val price:Double, var amount: Int)
