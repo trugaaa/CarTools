@@ -1,9 +1,9 @@
-import java.sql.SQLException
+import java.lang.Exception
 
 fun main() {
     try {
 
-    } catch (ex: SQLException) {
+    } catch (ex: Exception) {
         // handle any errors
         ex.printStackTrace()
     }

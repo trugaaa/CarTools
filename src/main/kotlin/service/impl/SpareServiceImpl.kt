@@ -11,7 +11,6 @@ import service.SpareService
  * */
 class SpareServiceImpl : SpareService {
     private val sparesDaoImpl = SparesDaoImpl()
-
     override fun add(spare: Spares): Spares {
         return sparesDaoImpl.save(spare)
     }
