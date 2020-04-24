@@ -1,7 +1,5 @@
 package model
 
-import dao.Dao
-
 /**
  * @author trugaaa ( Andrey Kolesnyk )
  *

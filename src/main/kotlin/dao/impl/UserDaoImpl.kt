@@ -5,6 +5,7 @@ import dao.UserDao
 import manager.ConnectionManager
 import model.Users
 import java.sql.ResultSet
+import java.sql.SQLException
 import java.sql.Statement
 
 /**
@@ -22,7 +23,7 @@ class UserDaoImpl : UserDao {
         const val SELECT_ALL: String =
             "SELECT id,username,email, firstName,secondName,password,phone FROM users"
         const val SELECT_BY_ID: String =
-            "SELECT id,username,email firstName,secondName,password,phone FROM users WHERE id = ?"
+            "SELECT id,username ,email,firstName,secondName,password,phone FROM users WHERE id = ?"
         const val UPDATE_BY_ID: String =
             "UPDATE users SET  username = ?, email = ?,firstName = ?, secondName = ?, password = ?, phone = ? WHERE id = ?"
     }
@@ -63,7 +64,7 @@ class UserDaoImpl : UserDao {
                 resultSet.getString("password"),
                 resultSet.getLong("phone")
             )
-        } else null
+        } else throw SQLException("Not found")
     }
 
 

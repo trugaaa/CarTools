@@ -1,5 +1,7 @@
 package service
 
+import data.BaseResponse
+import data.ResponseWithList
 import model.Users
 
 /**
@@ -14,31 +16,31 @@ interface UserService {
      * @param user - object to be saved
      * @return Users - returned object, if saved
      */
-    fun add(user:Users):Users
+    fun add(user:Users): BaseResponse<Users>
 
     /**
      * Deleting object (row) from table "users" by id
      * @param id - id of object in table "users" to be deleted
      */
-    fun delete(id:Long)
+    fun delete(id:Long): BaseResponse<Users>
 
     /**
      * Updating object (row) in table "users"
      * @param user - new instanse of object in the table by id of this object
      * @return Users - new updated instanse from DB
     */
-    fun update(user:Users):Users
+    fun update(user:Users): BaseResponse<Users>
 
     /**
      * Selection of all table elements
      * @return List<T> - returns list of all table "users" items
      */
-    fun selectAll():List<Users>
+    fun selectAll(): BaseResponse<ResponseWithList<Users>>
 
     /**
      * Selection of an table object selected by id
      * @param id - id of element to be found
      * @return Users - returned object, if not-found returns null
      */
-    fun selectById(id:Long):Users?
+    fun selectById(id:Long): BaseResponse<Users>
 }
